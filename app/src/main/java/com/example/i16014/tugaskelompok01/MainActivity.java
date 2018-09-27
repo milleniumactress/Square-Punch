@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.startBtn = this.findViewById(R.id.startBtn);
-        this.finishBtn  = this.findViewById(R.id.finishBtn);
-        this.imageView = this.findViewById(R.id.imageView);
+        this.startBtn = this.findViewById(R.id.start_btn);
+        this.finishBtn  = this.findViewById(R.id.finish_btn);
+        this.imageView = this.findViewById(R.id.image_view);
 
         this.isStarted = false;
     }
