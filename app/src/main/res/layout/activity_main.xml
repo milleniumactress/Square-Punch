@@ -13,12 +13,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/score"
+            android:layout_toLeftOf="@id/score_textView"
             android:text="@string/score"
             android:layout_margin="10dp"/>
 
         <TextView
-            android:id="@+id/score"
+            android:id="@+id/score_textView"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

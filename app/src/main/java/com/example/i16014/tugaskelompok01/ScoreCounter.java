@@ -6,14 +6,14 @@ package com.example.i16014.tugaskelompok01;
 
 public class ScoreCounter {
 
-    private int recentScore;
+    protected int recentScore;
+
+    public ScoreCounter(){
+        this.recentScore = 0;
+    }
 
     public void addScore(){
         this.recentScore++;
-    }
-
-    public int getRecentScore(){
-        return this.recentScore;
     }
 
 }
