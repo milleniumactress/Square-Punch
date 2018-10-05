@@ -3,5 +3,6 @@
     <string name="score">Score: </string>
     <string name="start">Start</string>
     <string name="finish">Finish</string>
+    <string name="timer">Time Left: </string>
 
 </resources>
