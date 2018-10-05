@@ -24,4 +24,11 @@ public class Presenter {
         this.shapeArr.generateShape(x,y);
     }
 
+    public int getNoOfShapes() {
+        return this.shapeArr.getNoOfShapes();
+    }
+
+    public void clearShapes(){
+        this.shapeArr.clearShapes();
+    }
 }

@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -53,22 +54,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if(view.getId()==this.startBtn.getId()){
-            if(!isStarted){
+            if(!this.isStarted){
+                this.isStarted = true;
                 Bitmap bitmap = Bitmap.createBitmap(this.imageView.getWidth(),this.imageView.getHeight(), Bitmap.Config.ARGB_8888);
                 this.imageView.setImageBitmap(bitmap);
                 this.mCanvas  = new Canvas(bitmap);
                 this.paint = new Paint();
                 paint.setColor(ResourcesCompat.getColor(getResources(),R.color.colorPrimaryDark,null));
                 this.presenter.generateShape(this.imageView.getWidth(),this.imageView.getHeight());
-                Rect r = new Rect(200,150,250,200);
-                }
+            }
             else{
+                this.mCanvas.drawColor(Color.WHITE);
                 this.presenter.generateShape(this.imageView.getWidth(),this.imageView.getHeight());
             }
             for(int i=0;i<this.presenter.shapeArr.shapesArray.size();i++){
                 this.mCanvas.drawRect(this.presenter.shapeArr.shapesArray.get(i),this.paint);
             }
+            Log.d("msg",this.presenter.getNoOfShapes()+"");
+            this.presenter.clearShapes();
             this.imageView.invalidate();
+
         }
     }
 
@@ -81,11 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public boolean onDown(MotionEvent e) {
-            for(int i=0;i<presenter.shapeArr.shapesArray.size();i++){
+            for(int i=0;i<presenter.shapeArr.getNoOfShapes();i++){
                 Rect r = presenter.shapeArr.shapesArray.get(i);
-                if(r.contains((int)e.getX(),(int)e.getY())){
+                if(r.contains((int)e.getX()-200,(int)e.getY()-200)){
                     presenter.addScore();
-                    scoreTextView.setText(presenter.score.recentScore);
+                    scoreTextView.setText(presenter.score.recentScore+"");
                 }
             }
             return false;

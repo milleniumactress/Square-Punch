@@ -13,7 +13,7 @@ public class ScoreCounter {
     }
 
     public void addScore(){
-        this.recentScore++;
+        this.recentScore+=10;
     }
 
 }
