@@ -113,9 +113,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.ctTimer = new CountDownTimer(this.timeLeftMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                timerTextView.setText(millisUntilFinished / 60000 + " : " + millisUntilFinished / 1000);
-//                mins = (int) millisUntilFinished / 60000;
-//                secs = (int) millisUntilFinished / 1000;
+                int mins = (int) millisUntilFinished / 60000;
+                int secs = (int) millisUntilFinished / 1000;
+                timerTextView.setText("0" + mins + " : " + secs);
             }
 
             @Override
