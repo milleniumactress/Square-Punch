@@ -86,8 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public boolean onDown(MotionEvent e) {
-            presenter.addScore();
-            scoreTextView.setText(presenter.score.recentScore+"");
+//            presenter.addScore();
+//            scoreTextView.setText(presenter.score.recentScore+"");
+
+
+
 //            for(int i=0;i<presenter.shapeArr.getNoOfShapes();i++){
 //                Rect r = presenter.shapeArr.shapesArray.get(i);
 //                if(r.contains((int)e.getX()-200,(int)e.getY()-200)){
